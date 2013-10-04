@@ -36,14 +36,19 @@
                 </div>
                 <div class="box-content padding-top20" id="box-content">
                 	<div class="row-fluid">
-                    	<div class="span12">
+                    	<div class="span12" id="appnddiv">
+                        	<div class="page">Page 1</div>
                         	<div class="addquestion">
-                            	<a href="createsurvey.html" id="addquestion" class="btn btn-primary btn-large" role="button" data-target="#mymodal" data-toggle="modal">Add Question</a>
-                            </div> 
-                            <div class="addpage">
-                            	<a href="createsurvey.html" class="btn btn-primary btn-large">Add page</a>
-                        	</div>
+                            	<a class="btn btn-primary btn-large openpopup" role="button" data-target="#mymodal" data-toggle="modal">Add Question</a>
+                            </div>
                     	</div>
+                    </div>
+                    <div class="row-fluid">
+                    	<div class="span12">
+                        	<div class="addpage">
+                            	<a href="#" class="btn btn-primary btn-large" onClick="return addpage(page);">Add page</a>
+                        	</div>
+                        </div>
                     </div>
                 </div>
             </div>

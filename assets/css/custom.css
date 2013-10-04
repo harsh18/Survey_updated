@@ -321,4 +321,9 @@ padding:10px;
 	float:left;
 	clear:left;
 }
-.
+.page{
+	margin:0 auto 10px auto;
+	color:#797979;
+	font-size:15px;
+	font-weight:bold;
+}

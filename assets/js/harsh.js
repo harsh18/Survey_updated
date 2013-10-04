@@ -1,38 +1,18 @@
 // JavaScript Document
-/*###############################*/
-/*######## Popup script #########*/
-/*###############################*/
-/*function popup(){
-	if(document.getElementById("back").style.display	== "none"){
-		document.getElementById("back").style.display	=	'block';
+var page	=	1;
+$(document).ready(function(){
+						   
+	$("#appnddiv").delegate("a","click",function(){
+		$('#myModal').modal();											 
+});
+	
+	/*var opnpop	=	function(e){
+		e.preventDefault();
+		if(e.target.nodeName == "a"){
+			console.log(e.target);
+		}
 	}
-	if(document.getElementById("block").style.display	== "none"){
-		document.getElementById("block").style.display	=	'block';;
-	}
-}
-function popclos(){
-	if(document.getElementById("back").style.display	=	"block"){
-		document.getElementById("back").style.display	=	"none"
-	}
-	if(document.getElementById("block").style.display	=	"block"){
-		document.getElementById("block").style.display	=	"none"
-	}
-}*/
-$(document).ready(function () {
-      $("#closebtn").click(function () {
-        $("#block").hide('800', "swing", function () { $("#back").fadeOut("500"); });
-      });
-      $("#opn").click(function () {
-        if (document.getElementById('back').style.visibility == 'hidden') {
-          document.getElementById('back').style.visibility = '';
-          $("#back").hide();
-        }
-        if (document.getElementById('block').style.visibility == 'hidden') {
-          document.getElementById('block').style.visibility = '';
-          $("#block").hide();
-        }
-        $("#back").fadeIn(500, "linear", function () { $("#block").show(800, "swing"); });
-      });    
+	document.getElementById("appnddiv").addEventListener("click",opnpop,false);*/
 });
 
 
@@ -160,4 +140,24 @@ function questintype(typevalue,idanswr){
 		spanlabel.appendChild(txtara);
 		return true;
 	}
+}
+
+/*##########################################*/
+/*### Element Creation script for answer ###*/
+/*##########################################*/
+function addpage(){
+	page++;
+	var parntdiv	=	document.getElementById("appnddiv");
+	var newdiv	=	document.createElement('div');
+	newdiv.className	=	'page';
+	newdiv.innerHTML	=	'Page'+ " " +page;
+	parntdiv.appendChild(newdiv);
+	var contdiv	=	document.createElement('div');
+	contdiv.className	=	'cont';
+	var cont	=	"<div class='addquestion'>" +
+	"<a href='#' class='btn btn-primary btn-large openpop' role='button' data-target='#mymodal' data-toggle='modal'>Add Question "+
+	"</a></div>";
+	contdiv.innerHTML	=	cont;
+	parntdiv.appendChild(contdiv);
+	return true;
 }

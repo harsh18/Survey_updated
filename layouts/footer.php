@@ -10,6 +10,8 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
@@ -24,7 +26,7 @@
     <script src="assets/js/bootstrap-collapse.js"></script>
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
-	<script type="text/javascript" src="assets/js/harsh.js"></script>
+
     <script type="text/javascript" src="assets/js/jquery.dataTables.js"></script>
     	<!-- data table plugin -->
     <script type="text/javascript">
@@ -41,11 +43,8 @@
 			$('.selectpicker').selectpicker({
                 'selectedText': 'select'
             });
-			$('#addquestion').click(function(){
-				$('#myModal').modal();
-			});
 	})
 	</script>
-
+		<script type="text/javascript" src="assets/js/harsh.js"></script>
   </body>
 </html>
