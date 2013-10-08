@@ -1,10 +1,27 @@
 // JavaScript Document
 var page	=	1;
+var count	=	0;
+var array = new Array;
+var parntarray = [];
 $(document).ready(function(){
-						   
-	$("#appnddiv").delegate("a","click",function(){
+	$('#appnddiv').on('click', 'a.openpopup', function(e){
+		e.preventDefault();
+		console.log(this.target);
+		resetvalue();
+		$('#myModal').modal();												  
+	});			
+				
+	/*$("#appnddiv").delegate("a","click",function(){
 		$('#myModal').modal();											 
-});
+});		*/	
+				
+	/*$('#appnddiv').on('click', 'a', function(e){
+		alert("");
+		if($(this).hasClass('opnpopup')){
+			e.preventDefault();
+			alert($(this).value);
+		}										 
+	})*/
 	
 	/*var opnpop	=	function(e){
 		e.preventDefault();
@@ -13,9 +30,41 @@ $(document).ready(function(){
 		}
 	}
 	document.getElementById("appnddiv").addEventListener("click",opnpop,false);*/
+				/*#########################################*/
+				/*###### json of form element script ######*/
+				/*#########################################*/
+				
 });
+function datahandling(){
+	var data =	{};
+	var arr	= $('form').serializeArray();
+	$.each(arr, function(){
+		data[this.name]=this.value;		 
+	});
+	//console.log(data);
+	array.push(data);
+	console.log(array);
+	/*for(i=0;i<parntarray.length;i++){
+		if(parntarray.length>0){
+			parntarray[0] = '';	
+		}
+	}*/
+	parntarray.splice(0, 0, array);
+	console.log(parntarray.length);
+	/*parntarray = parntarray.concat(array);*/
+	console.log(parntarray);	
+	return true; 
+}
 
 
+
+
+function resetvalue(){
+	document.forms['form1']['question_body'].value	= ' ';
+	$('.selectpicker').selectpicker('val', 'select');
+	document.getElementById("answerlabel").style.display = 'none';
+	return true;
+}
 /*###############################*/
 /*###### validation script ######*/
 /*###############################*/
@@ -155,7 +204,7 @@ function addpage(){
 	var contdiv	=	document.createElement('div');
 	contdiv.className	=	'cont';
 	var cont	=	"<div class='addquestion'>" +
-	"<a href='#' class='btn btn-primary btn-large openpop' role='button' data-target='#mymodal' data-toggle='modal'>Add Question "+
+	"<a href='#' class='btn btn-primary btn-large openpopup' role='button' data-target='#mymodal' data-toggle='modal'>Add Question "+
 	"</a></div>";
 	contdiv.innerHTML	=	cont;
 	parntdiv.appendChild(contdiv);

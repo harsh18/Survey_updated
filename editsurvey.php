@@ -39,7 +39,7 @@
                     	<div class="span12" id="appnddiv">
                         	<div class="page">Page 1</div>
                         	<div class="addquestion">
-                            	<a class="btn btn-primary btn-large openpopup" role="button" data-target="#mymodal" data-toggle="modal">Add Question</a>
+                            	<a class="openpopup btn btn-primary btn-large" role="button" data-target="#mymodal" data-toggle="modal">Add Question</a>
                             </div>
                     	</div>
                     </div>
@@ -66,6 +66,8 @@
      									<!-- Modal Window start -->   
         
     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form method="post" action="" id="form1" name="form1">
+	        
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="myModalLabel">Add Questions</h3>
@@ -73,38 +75,39 @@
       <div class="modal-body">
         <div class="row-fluid">
         	<div class="span-12">
-            	<form method="post" action="">
-	                <fieldset>
-                    	<div class="questiontext">
-                            <label>Question Text</label>
-                            <textarea rows="3" cols="40" name='question_body'></textarea>
+                <fieldset>
+                    <div class="questiontext">
+                        <label>Question Text</label>
+                        <textarea rows="3" cols="40" name='question_body'></textarea>
+                    </div>
+                    <div class="questiontype">
+                        <label>Question Type</label>
+                        <select id='questiontype' onchange='return change()' name='question_type' class="selectpicker bla bla bli">
+                            <option value='select'>select</option>
+                            <option value='multchoice'>Multiple choice answer</option>
+                            <option value='comntbox'>Comment/easybox</option>
+                            <option value='single'>Single textbox</option>
+                        </select>
+                    </div>
+                    <div class='questiontype' style='display:none' id='answerlabel'>
+                        <div class='' id="text" >
+                            Type your answer below(For multiple answer. Type in different line)
                         </div>
-                        <div class="questiontype">
-                            <label>Question Type</label>
-                            <select id='questiontype' onchange='return change()' name='question_type' class="selectpicker bla bla bli">
-                                <option value='select'>select</option>
-                                <option value='multchoice'>Multiple choice answer</option>
-                                <option value='comntbox'>Comment/easybox</option>
-                                <option value='single'>Single textbox</option>
-                            </select>
+                        <div class='answerbox' id='answer'>
+                            
                         </div>
-                        <div class='questiontype' style='display:none' id='answerlabel'>
-                            <div class='' id="text" >
-                                Type your answer below(For multiple answer. Type in different line)
-                            </div>
-                            <div class='answerbox' id='answer'>
-                                
-                            </div>
-                        </div> 
-                    </fieldset>
-                </form>
+                    </div> 
+                </fieldset>
             </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
+        <a class="btn btn-primary" data-dismiss="modal" aria-hidden="true" >Close</a>
+		<a class="btn btn-primary" aria-hidden="true" data-dismiss="modal" onClick="return datahandling();">Save</a>
+        <!-- <input type="submit" class="btn btn-primary" value="Save changes" /> -->
       </div>
+     </form>
+            
     </div>
     
     									<!-- Modal Window End -->
