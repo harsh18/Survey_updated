@@ -13,7 +13,7 @@
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
+    <!--<script src="assets/js/bootstrap-transition.js"></script>-->
     <script src="assets/js/bootstrap-alert.js"></script>
     <script src="assets/js/bootstrap-modal.js"></script>
     <script src="assets/js/bootstrap-select.js"></script>

@@ -37,7 +37,8 @@
                 <div class="box-content padding-top20" id="box-content">
                 	<div class="row-fluid">
                     	<div class="span12" id="appnddiv">
-                        	<div class="page">Page 1</div>
+                        <script>var i=1; document.write("<div class='page' id='page " + i +"'>" );   </script>
+                        	Page 1</div>
                         	<div class="addquestion">
                             	<a class="openpopup btn btn-primary btn-large" role="button" data-target="#mymodal" data-toggle="modal">Add Question</a>
                             </div>
@@ -101,12 +102,12 @@
             </div>
         </div>
       </div>
-      <div class="modal-footer">
+      
+     </form><div class="modal-footer" id="modal-footer">
         <a class="btn btn-primary" data-dismiss="modal" aria-hidden="true" >Close</a>
-		<a class="btn btn-primary" aria-hidden="true" data-dismiss="modal" onClick="return datahandling();">Save</a>
+		<a class="btn btn-primary save" aria-hidden="true" data-dismiss="modal">Save</a>
         <!-- <input type="submit" class="btn btn-primary" value="Save changes" /> -->
       </div>
-     </form>
             
     </div>
     

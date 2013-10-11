@@ -1,7 +1,8 @@
 // JavaScript Document
 var page	=	1;
 var count	=	0;
-var array = new Array;
+var id = 1;
+var arr1 = [];
 var parntarray = [];
 $(document).ready(function(){
 	$('#appnddiv').on('click', 'a.openpopup', function(e){
@@ -10,7 +11,7 @@ $(document).ready(function(){
 		resetvalue();
 		$('#myModal').modal();												  
 	});			
-				
+	$('#modal-footer').on('click', 'a.save', datahandling);		
 	/*$("#appnddiv").delegate("a","click",function(){
 		$('#myModal').modal();											 
 });		*/	
@@ -35,25 +36,54 @@ $(document).ready(function(){
 				/*#########################################*/
 				
 });
+
+
+
+
 function datahandling(){
-	var data =	{};
+
 	var arr	= $('form').serializeArray();
+	console.log(arr);
+	var data = {};
 	$.each(arr, function(){
-		data[this.name]=this.value;		 
+		data[this.name]=this.value;		
 	});
-	//console.log(data);
-	array.push(data);
-	console.log(array);
-	/*for(i=0;i<parntarray.length;i++){
-		if(parntarray.length>0){
-			parntarray[0] = '';	
-		}
-	}*/
-	parntarray.splice(0, 0, array);
-	console.log(parntarray.length);
-	/*parntarray = parntarray.concat(array);*/
+	console.log(data);
+	arr1.push(data);
+	if(parntarray.length >=1){
+		//console.log(parntarray.length);
+		var i = parntarray.length;
+		parntarray.splice(0, 1);
+		//console.log(arr1);
+		parntarray.splice(0, 0, arr1);
+		console.log(parntarray);
+		return true;
+	}else{
+		parntarray.splice(0, 0, arr1);
+		//parntarray.push(arr1);
+		console.log(parntarray);
+	}
+	/*var data =	{};
+	var arr	= $('form').serializeArray();
+	console.log(arr, typeof arr);
+	$.each(arr, function(){
+		data[this.name]=this.value;		
+		console.log(this.name, this.value);
+	});
+	console.log(data);
+	arr1.push(data);
+	console.log(arr1);
+	if(parntarray.length >=1){
+		console.log(parntarray.length);
+		var i = parntarray.length;
+		parntarray.splice(0, 1);
+		parntarray.splice(0, 0, arr1)
+		return true;
+	}
+	parntarray.splice(0, 0, arr1);
 	console.log(parntarray);	
 	return true; 
+	*/
 }
 
 
